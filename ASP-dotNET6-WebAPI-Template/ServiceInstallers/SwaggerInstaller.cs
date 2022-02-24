@@ -15,6 +15,8 @@ namespace ASP_dotNET6_WebAPI_Template.ServiceInstallers
                 string xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
                 string xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
                 swaggerOptions.IncludeXmlComments(xmlPath);
+
+                swaggerOptions.UseApiEndpoints();
             });
 
             services.AddSwaggerExamplesFromAssemblyOf<Startup>();

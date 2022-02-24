@@ -14,8 +14,14 @@
 
   <ItemGroup>
 	<PackageReference Include="Ardalis.ApiEndpoints" Version="4.0.1" />
+	<PackageReference Include="Ardalis.ApiEndpoints.Swashbuckle" Version="4.0.1" />
+	<PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
 	<PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
 	<PackageReference Include="Swashbuckle.AspNetCore.Filters" Version="7.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+	<Folder Include="DataAccess\" />
   </ItemGroup>
 
 </Project>
