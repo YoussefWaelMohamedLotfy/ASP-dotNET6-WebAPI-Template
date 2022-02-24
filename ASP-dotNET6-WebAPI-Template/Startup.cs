@@ -1,4 +1,6 @@
-﻿namespace ASP_dotNET6_WebAPI_Template
+﻿using ASP_dotNET6_WebAPI_Template.Extensions;
+
+namespace ASP_dotNET6_WebAPI_Template
 {
     public class Startup
     {
@@ -15,11 +17,7 @@
         /// <param name="services"></param>
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
-
-            // Swagger
-            services.AddEndpointsApiExplorer();
-            services.AddSwaggerGen();
+            services.InstallServicesInAssembly(Configuration);
         }
 
         /// <summary>
