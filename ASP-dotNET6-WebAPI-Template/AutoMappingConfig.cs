@@ -10,10 +10,12 @@ namespace ASP_dotNET6_WebAPI_Template
         {
             // Commands to Entities Mapping
             CreateMap<CreateCustomerCommand, Customer>();
+            CreateMap<UpdateCustomerCommand, Customer>();
 
 
             // Entities to Results Mapping
             CreateMap<Customer, CreateCustomerResult>();
+            CreateMap<Customer, UpdatedCustomerResult>();
         }
     }
 }
