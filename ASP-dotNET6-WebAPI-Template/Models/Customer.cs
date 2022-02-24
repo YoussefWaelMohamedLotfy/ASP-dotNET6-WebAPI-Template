@@ -1,9 +1,7 @@
 ﻿namespace ASP_dotNET6_WebAPI_Template.Models
 {
-    public class Customer
+    public class Customer : BaseEntity<int>
     {
-        public int ID { get; set; }
-
         public string Name { get; set; }
 
         public string Address { get; set; }
