@@ -27,7 +27,7 @@ namespace ASP_dotNET6_WebAPI_Template
         /// <param name="env">The Host Environment</param>
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (env.IsDevelopment())
+            if (env.IsDevelopment() || env.IsStaging())
             {
                 app.UseSwagger();
                 app.UseSwaggerUI();
