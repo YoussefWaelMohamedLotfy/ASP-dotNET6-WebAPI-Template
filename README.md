@@ -3,7 +3,7 @@
 The ready template for the next Up-to-Date Web API Project.
 
 ## Features supported
----
+
 + Clean Assembly Service Registration
 + Clean Endpoint Structure (Request-EndPoint-Response (**REPR**) Pattern)
   + CRUD Operations with Data Transfer Objects (Commands + Results)
@@ -18,3 +18,6 @@ The ready template for the next Up-to-Date Web API Project.
 + Bogus Fake Data Generator for DbContext Seeding
 + Serilog
   + Console Sink
++ API Versioning
+  + Header Based
+  + Media Type Based

@@ -1,6 +1,5 @@
 ﻿using Ardalis.ApiEndpoints;
 using ASP_dotNET6_WebAPI_Template.Models;
-using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ASP_dotNET6_WebAPI_Template.Endpoints.Customers
