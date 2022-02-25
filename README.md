@@ -13,3 +13,4 @@ The ready template for the next Up-to-Date Web API Project.
   + Request and Response Examples
 + Entity Framework Core 6
   + SQL Server Connection
++ Asynchronous Repository and Unit of Work Patterns implemented
