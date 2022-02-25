@@ -1,11 +1,20 @@
 using ASP_dotNET6_WebAPI_Template;
 using ASP_dotNET6_WebAPI_Template.DataAccess;
 using ASP_dotNET6_WebAPI_Template.Extensions;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 var startup = new Startup(builder.Configuration);
 
 startup.ConfigureServices(builder.Services);
+
+builder.Host.UseSerilog((context, configuration) =>
+{
+    configuration
+        .Enrich.FromLogContext()
+        .WriteTo.Console()
+        .ReadFrom.Configuration(context.Configuration);
+});
 
 var app = builder.Build();
 
