@@ -42,6 +42,8 @@ public class Startup
         app.UseEndpoints(endpoints =>
         {
             endpoints.MapControllers();
+
+            endpoints.MapCustomHealthChecks();
         });
     }
 

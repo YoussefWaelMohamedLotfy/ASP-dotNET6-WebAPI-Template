@@ -21,3 +21,7 @@ The ready template for the next Up-to-Date Web API Project.
 + API Versioning
   + Header Based
   + Media Type Based
++ Health Checks
+  + Entity Framework Core DbContext Check
+  + SQL Server Check
+  + URL Group Check
