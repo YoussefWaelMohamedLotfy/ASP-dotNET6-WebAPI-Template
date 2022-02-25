@@ -1,11 +1,20 @@
 ﻿using Ardalis.ApiEndpoints;
+using ASP_dotNET6_WebAPI_Template.Models;
+using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ASP_dotNET6_WebAPI_Template.Endpoints.Customers;
 
-public class GetAll : EndpointBaseSync.WithoutRequest.WithResult<IEnumerable<GetAllCustomersResult>>
+public class GetAll : EndpointBaseAsync.WithoutRequest.WithResult<IEnumerable<GetAllCustomersResult>>
 {
+    private readonly IUnitOfWork _unitOfWork;
+    private readonly IMapper _mapper;
 
+    public GetAll(IUnitOfWork unitOfWork, IMapper mapper)
+    {
+        _unitOfWork = unitOfWork ?? throw new ArgumentNullException(nameof(unitOfWork));
+        _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
+    }
 
     /// <summary>
     /// Get All Customer from Database
@@ -17,15 +26,10 @@ public class GetAll : EndpointBaseSync.WithoutRequest.WithResult<IEnumerable<Get
     /// <response code="200">A success request</response>
     /// <response code="404">Not Found any Customers</response>
     [HttpGet("api/[namespace]")]
-    public override IEnumerable<GetAllCustomersResult> Handle()
+    public override async Task<IEnumerable<GetAllCustomersResult>> HandleAsync(CancellationToken cancellationToken)
     {
-        IEnumerable<GetAllCustomersResult> result = new List<GetAllCustomersResult>()
-        {
-            new GetAllCustomersResult() { Name = "Ahmed" },
-            new GetAllCustomersResult() { Name = "Ahmed1" },
-            new GetAllCustomersResult() { Name = "Ahmed2" },
-            new GetAllCustomersResult() { Name = "Ahmed3" }
-        };
+        var result = (await _unitOfWork.Customers.ListAllAsync(cancellationToken))
+            .Select(_mapper.Map<GetAllCustomersResult>);
         
         return result;
     }

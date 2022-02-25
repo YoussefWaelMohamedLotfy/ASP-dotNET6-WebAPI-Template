@@ -20,6 +20,7 @@ public class Create : EndpointBaseAsync.WithRequest<CreateCustomerCommand>.WithA
     /// Creates a new Customer in the database
     /// </summary>
     /// <param name="request"></param>
+    /// <param name="cancellationToken"></param>
     /// <returns>The newly created Customer</returns>
     /// <response code="201">Created Success</response>
     /// <response code="400">Bad Request</response>

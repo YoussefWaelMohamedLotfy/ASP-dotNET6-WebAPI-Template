@@ -15,6 +15,7 @@ namespace ASP_dotNET6_WebAPI_Template
 
             // Entities to Results Mapping
             CreateMap<Customer, GetCustomerResult>();
+            CreateMap<Customer, GetAllCustomersResult>();
             CreateMap<Customer, CreateCustomerResult>();
             CreateMap<Customer, UpdatedCustomerResult>();
         }

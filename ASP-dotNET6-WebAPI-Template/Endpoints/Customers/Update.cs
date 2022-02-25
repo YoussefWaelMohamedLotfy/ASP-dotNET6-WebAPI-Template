@@ -5,12 +5,14 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ASP_dotNET6_WebAPI_Template.Endpoints.Customers
 {
-    public class Update : EndpointBaseSync.WithRequest<UpdateCustomerCommand>.WithActionResult<UpdatedCustomerResult>
+    public class Update : EndpointBaseAsync.WithRequest<UpdateCustomerCommand>.WithActionResult<UpdatedCustomerResult>
     {
+        private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
 
-        public Update(IMapper mapper)
+        public Update(IUnitOfWork unitOfWork, IMapper mapper)
         {
+            _unitOfWork = unitOfWork ?? throw new ArgumentNullException(nameof(unitOfWork));
             _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
         }
 
@@ -18,26 +20,28 @@ namespace ASP_dotNET6_WebAPI_Template.Endpoints.Customers
         /// Updates a customer in database
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
         /// <returns></returns>
         /// <response code="200">Updated Successfully</response>
         /// <response code="404">Not Found</response>
         [HttpPut("api/[namespace]")]
-        public override ActionResult<UpdatedCustomerResult> Handle([FromBody] UpdateCustomerCommand request)
+        public override async Task<ActionResult<UpdatedCustomerResult>> HandleAsync([FromBody] UpdateCustomerCommand request, CancellationToken cancellationToken)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (request.ID == 0)
+            var customerInDb = await _unitOfWork.Customers.GetByIdAsync(request.ID, cancellationToken);
+
+            if (customerInDb is null)
                 return NotFound();
 
-            Customer customerinDb = new();
-            _mapper.Map(request, customerinDb);
+            _mapper.Map(request, customerInDb);
+            _unitOfWork.Customers.Update(customerInDb);
+            await _unitOfWork.SaveAsync(cancellationToken);
 
-            // Update and save
-
-            var result = _mapper.Map<UpdatedCustomerResult>(customerinDb);
+            var result = _mapper.Map<UpdatedCustomerResult>(customerInDb);
             return result;
         }
     }
