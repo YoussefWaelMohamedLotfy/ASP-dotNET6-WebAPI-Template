@@ -27,7 +27,7 @@ namespace ASP_dotNET6_WebAPI_Template.DataAccess.Repositories
 
         public async Task<T> GetByIdAsync(TID id, CancellationToken cancellationToken)
         {
-            return await _db.FindAsync(id, cancellationToken);
+            return await _db.SingleOrDefaultAsync(x => x.ID.Equals(id), cancellationToken);
         }
 
         public async Task<IReadOnlyList<T>> ListAllAsync(CancellationToken cancellationToken)

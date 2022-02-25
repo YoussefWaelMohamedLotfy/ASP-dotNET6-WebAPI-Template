@@ -5,15 +5,16 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ASP_dotNET6_WebAPI_Template.Endpoints.Customers;
 
-public class Create : EndpointBaseSync.WithRequest<CreateCustomerCommand>.WithActionResult<CreateCustomerResult>
+public class Create : EndpointBaseAsync.WithRequest<CreateCustomerCommand>.WithActionResult<CreateCustomerResult>
 {
+    private readonly IUnitOfWork _unitOfWork;
     private readonly IMapper _mapper;
 
-    public Create(IMapper mapper)
+    public Create(IUnitOfWork unitOfWork, IMapper mapper)
     {
+        _unitOfWork = unitOfWork ?? throw new ArgumentNullException(nameof(unitOfWork));
         _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
     }
-
 
     /// <summary>
     /// Creates a new Customer in the database
@@ -24,11 +25,11 @@ public class Create : EndpointBaseSync.WithRequest<CreateCustomerCommand>.WithAc
     /// <response code="400">Bad Request</response>
     [HttpPost("api/[namespace]")]
     [ProducesResponseType(typeof(CreateCustomerResult), 201)]
-    public override ActionResult<CreateCustomerResult> Handle([FromBody] CreateCustomerCommand request)
+    public override async Task<ActionResult<CreateCustomerResult>> HandleAsync([FromBody] CreateCustomerCommand request, CancellationToken cancellationToken)
     {
         Customer newCustomer = _mapper.Map<Customer>(request);
-
-        // Add in Repo and Save
+        await _unitOfWork.Customers.AddAsync(newCustomer, cancellationToken);
+        await _unitOfWork.SaveAsync(cancellationToken);
 
         var result = _mapper.Map<CreateCustomerResult>(newCustomer);
         return CreatedAtRoute("Customers_Get", new { id = result.ID }, result);

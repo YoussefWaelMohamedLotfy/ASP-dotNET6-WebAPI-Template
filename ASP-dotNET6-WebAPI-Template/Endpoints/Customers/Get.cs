@@ -1,34 +1,43 @@
 ﻿using Ardalis.ApiEndpoints;
+using ASP_dotNET6_WebAPI_Template.Models;
+using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ASP_dotNET6_WebAPI_Template.Endpoints.Customers
 {
-    public class Get : EndpointBaseSync.WithRequest<int>.WithActionResult<GetCustomerResult>
+    public class Get : EndpointBaseAsync.WithRequest<int>.WithActionResult<GetCustomerResult>
     {
+        private readonly IUnitOfWork _unitOfWork;
+        private readonly IMapper _mapper;
+
+        public Get(IUnitOfWork unitOfWork, IMapper mapper)
+        {
+            _unitOfWork = unitOfWork ?? throw new ArgumentNullException(nameof(unitOfWork));
+            _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
+        }
 
         /// <summary>
         /// Get a customer with the identifier
         /// </summary>
         /// <param name="id" example="4">The ID of Customer to be fetched</param>
+        /// <param name="cancellationToken"></param>
         /// <response code="200">Found a Customer</response>
         /// <response code="400">Not Found any with ID</response>
         /// <returns>The Customer Data</returns>
-        [HttpGet("api/[namespace]/{id}")]
-        public override ActionResult<GetCustomerResult> Handle(int id)
+        [HttpGet("api/[namespace]/{id}", Name = "[namespace]_[controller]")]
+        public override async Task<ActionResult<GetCustomerResult>> HandleAsync(int id, CancellationToken cancellationToken)
         {
             // Get from DB and return data
+            var customerInDb = await _unitOfWork.Customers.GetByIdAsync(id, cancellationToken);   
 
-            if (!ModelState.IsValid)
-            {
-                return BadRequest();
-            }    
-
-            if (id == 0)
+            if (customerInDb is null)
             {
                 return NotFound();
             }
 
-            return new GetCustomerResult { ID = id, Name = "Khaled" };
+            var result = _mapper.Map<GetCustomerResult>(customerInDb);
+
+            return result;
         }
     }
 }

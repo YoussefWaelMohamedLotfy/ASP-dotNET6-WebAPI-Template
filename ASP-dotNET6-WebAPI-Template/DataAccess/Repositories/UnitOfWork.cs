@@ -10,13 +10,11 @@ namespace ASP_dotNET6_WebAPI_Template.DataAccess
 
         public ICustomerRepository Customers { get; private set; }
 
-
         public UnitOfWork(ApplicationDbContext context)
         {
             _context = context ?? throw new ArgumentNullException(nameof(context));
             Customers = new CustomerRepository(_context);
         }
-
 
         public void Dispose()
         {

@@ -1,4 +1,5 @@
 ﻿using ASP_dotNET6_WebAPI_Template.DataAccess;
+using ASP_dotNET6_WebAPI_Template.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace ASP_dotNET6_WebAPI_Template.ServiceInstallers
@@ -11,6 +12,8 @@ namespace ASP_dotNET6_WebAPI_Template.ServiceInstallers
             {
                 options.UseSqlServer(configuration.GetConnectionString("SqlServerConnection"));
             });
+
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
         }
     }
 }
