@@ -1,6 +1,5 @@
-﻿namespace ASP_dotNET6_WebAPI_Template.Models.IRepositories
+﻿namespace ASP_dotNET6_WebAPI_Template.Models.IRepositories;
+
+public interface ICustomerRepository : IAsyncRepository<Customer, int>
 {
-    public interface ICustomerRepository : IAsyncRepository<Customer, int>
-    {
-    }
 }

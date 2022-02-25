@@ -1,5 +1,5 @@
 ﻿using Ardalis.ApiEndpoints;
-using ASP_dotNET6_WebAPI_Template.Models;
+using ASP_dotNET6_WebAPI_Template.Models.IRepositories;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 

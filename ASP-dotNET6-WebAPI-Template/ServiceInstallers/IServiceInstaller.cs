@@ -1,7 +1,6 @@
-﻿namespace ASP_dotNET6_WebAPI_Template.ServiceInstallers
+﻿namespace ASP_dotNET6_WebAPI_Template.ServiceInstallers;
+
+public interface IServiceInstaller
 {
-    public interface IServiceInstaller
-    {
-        void InstallServices(IServiceCollection services, IConfiguration configuration);
-    }
+    void InstallServices(IServiceCollection services, IConfiguration configuration);
 }

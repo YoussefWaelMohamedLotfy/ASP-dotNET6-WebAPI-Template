@@ -1,13 +1,12 @@
-﻿namespace ASP_dotNET6_WebAPI_Template.ServiceInstallers
+﻿namespace ASP_dotNET6_WebAPI_Template.ServiceInstallers;
+
+public class MvcInstaller : IServiceInstaller
 {
-    public class MvcInstaller : IServiceInstaller
+    public void InstallServices(IServiceCollection services, IConfiguration configuration)
     {
-        public void InstallServices(IServiceCollection services, IConfiguration configuration)
+        services.AddControllers(options =>
         {
-            services.AddControllers(options =>
-            {
-                options.UseNamespaceRouteToken();
-            });
-        }
+            options.UseNamespaceRouteToken();
+        });
     }
 }

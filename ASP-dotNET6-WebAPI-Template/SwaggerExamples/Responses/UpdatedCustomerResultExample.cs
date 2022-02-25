@@ -1,13 +1,12 @@
 ﻿using ASP_dotNET6_WebAPI_Template.Endpoints.Customers;
 using Swashbuckle.AspNetCore.Filters;
 
-namespace ASP_dotNET6_WebAPI_Template.SwaggerExamples.Responses
+namespace ASP_dotNET6_WebAPI_Template.SwaggerExamples.Responses;
+
+public class UpdatedCustomerResultExample : IExamplesProvider<UpdatedCustomerResult>
 {
-    public class UpdatedCustomerResultExample : IExamplesProvider<UpdatedCustomerResult>
+    public UpdatedCustomerResult GetExamples()
     {
-        public UpdatedCustomerResult GetExamples()
-        {
-            return new UpdatedCustomerResult { ID = 3, Name = "Hossam", Address = "567 Lame St", DateOfBirth = DateTimeOffset.Now };
-        }
+        return new UpdatedCustomerResult { ID = 3, Name = "Hossam", Address = "567 Lame St", DateOfBirth = DateTimeOffset.Now };
     }
 }
