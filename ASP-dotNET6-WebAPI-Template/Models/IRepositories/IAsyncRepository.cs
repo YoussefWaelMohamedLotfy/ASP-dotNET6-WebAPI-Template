@@ -4,7 +4,7 @@ public interface IAsyncRepository<T, TID> where T : BaseEntity<TID>
 {
     Task<T> GetByIdAsync(TID id, CancellationToken cancellationToken);
 
-    Task<IReadOnlyList<T>> ListAllAsync(CancellationToken cancellationToken);
+    Task<IReadOnlyList<T>> ListAllAsync(CancellationToken cancellationToken, PaginationFilter? filter = null);
 
     Task<T> AddAsync(T entity, CancellationToken cancellationToken);
 

@@ -13,6 +13,8 @@ public class AutoMappingConfig : Profile
         CreateMap<CreateCustomerCommand, Customer>();
         CreateMap<UpdateCustomerCommand, Customer>();
 
+        CreateMap<PaginationQuery, PaginationFilter>();
+
 
         // Entities to Results Mapping
         CreateMap<Customer, GetCustomerResult>();

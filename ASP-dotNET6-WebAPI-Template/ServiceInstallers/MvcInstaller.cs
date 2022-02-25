@@ -1,4 +1,7 @@
-﻿namespace ASP_dotNET6_WebAPI_Template.ServiceInstallers;
+﻿using ASP_dotNET6_WebAPI_Template.Services;
+using System.Text.Json.Serialization;
+
+namespace ASP_dotNET6_WebAPI_Template.ServiceInstallers;
 
 public class MvcInstaller : IServiceInstaller
 {
@@ -7,6 +10,21 @@ public class MvcInstaller : IServiceInstaller
         services.AddControllers(options =>
         {
             options.UseNamespaceRouteToken();
+        })
+        .AddJsonOptions(options =>
+        {
+            options.JsonSerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull;
         });
+
+        services.AddHttpContextAccessor();
+
+        services.AddSingleton<IUriService>(provider =>
+        {
+            var accessor = provider.GetRequiredService<IHttpContextAccessor>();
+            var request = accessor.HttpContext!.Request;
+            var absoluteUri = $"{request.Scheme}://{request.Host.ToUriComponent()}{request.Path}/";
+            return new UriService(absoluteUri);
+        });
+
     }
 }

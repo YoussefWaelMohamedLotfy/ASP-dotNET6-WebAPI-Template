@@ -31,9 +31,15 @@ public class AsyncRepository<T, TID> : IAsyncRepository<T, TID> where T : BaseEn
         return await _db.SingleOrDefaultAsync(x => x.ID.Equals(id), cancellationToken);
     }
 
-    public async Task<IReadOnlyList<T>> ListAllAsync(CancellationToken cancellationToken)
+    public async Task<IReadOnlyList<T>> ListAllAsync(CancellationToken cancellationToken, PaginationFilter? filter = null)
     {
-        return await _db.ToListAsync(cancellationToken);
+        if (filter is null)
+        {
+            return await _db.ToListAsync(cancellationToken);
+        }
+
+        int skipNumber = (filter.PageNumber - 1) * filter.PageSize;
+        return await _db.Skip(skipNumber).Take(filter.PageSize).ToListAsync(cancellationToken);
     }
 
     public T Update(T entity)

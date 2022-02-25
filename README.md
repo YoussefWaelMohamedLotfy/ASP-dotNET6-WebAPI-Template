@@ -25,3 +25,4 @@ The ready template for the next Up-to-Date Web API Project.
   + Entity Framework Core DbContext Check
   + SQL Server Check
   + URL Group Check
++ Pagination
