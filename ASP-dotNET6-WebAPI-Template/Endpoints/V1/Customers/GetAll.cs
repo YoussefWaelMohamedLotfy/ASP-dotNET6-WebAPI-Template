@@ -3,7 +3,7 @@ using ASP_dotNET6_WebAPI_Template.Models.IRepositories;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ASP_dotNET6_WebAPI_Template.Endpoints.Customers;
+namespace ASP_dotNET6_WebAPI_Template.Endpoints.V1.Customers;
 
 public class GetAll : EndpointBaseAsync.WithoutRequest.WithResult<IEnumerable<GetAllCustomersResult>>
 {
@@ -30,7 +30,7 @@ public class GetAll : EndpointBaseAsync.WithoutRequest.WithResult<IEnumerable<Ge
     {
         var result = (await _unitOfWork.Customers.ListAllAsync(cancellationToken))
             .Select(_mapper.Map<GetAllCustomersResult>);
-        
+
         return result;
     }
 }

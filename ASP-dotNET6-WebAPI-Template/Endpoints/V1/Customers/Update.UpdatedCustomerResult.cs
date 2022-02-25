@@ -1,9 +1,8 @@
-﻿namespace ASP_dotNET6_WebAPI_Template.Endpoints.Customers
-{
-    public record UpdatedCustomerResult : UpdateCustomerCommand
-    {
-        public string Address { get; init; }
+﻿namespace ASP_dotNET6_WebAPI_Template.Endpoints.V1.Customers;
 
-        public DateTimeOffset DateOfBirth { get; init; }
-    }
+public record UpdatedCustomerResult : UpdateCustomerCommand
+{
+    public string Address { get; init; }
+
+    public DateTimeOffset DateOfBirth { get; init; }
 }

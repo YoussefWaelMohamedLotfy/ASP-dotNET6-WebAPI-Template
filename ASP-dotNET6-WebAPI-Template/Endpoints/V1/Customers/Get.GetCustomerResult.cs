@@ -1,13 +1,12 @@
-﻿namespace ASP_dotNET6_WebAPI_Template.Endpoints.Customers
+﻿namespace ASP_dotNET6_WebAPI_Template.Endpoints.V1.Customers;
+
+public record GetCustomerResult
 {
-    public record GetCustomerResult
-    {
-        public int ID { get; init; }
+    public int ID { get; init; }
 
-        public string Name { get; init; }
+    public string Name { get; init; }
 
-        public string Address { get; init; }
+    public string Address { get; init; }
 
-        public DateTimeOffset DateOfBirth { get; init; }
-    }
+    public DateTimeOffset DateOfBirth { get; init; }
 }

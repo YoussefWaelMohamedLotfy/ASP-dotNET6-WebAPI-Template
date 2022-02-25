@@ -1,10 +1,11 @@
 ﻿using Ardalis.ApiEndpoints;
+using ASP_dotNET6_WebAPI_Template.Endpoints.Customers;
 using ASP_dotNET6_WebAPI_Template.Models;
 using ASP_dotNET6_WebAPI_Template.Models.IRepositories;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ASP_dotNET6_WebAPI_Template.Endpoints.Customers;
+namespace ASP_dotNET6_WebAPI_Template.Endpoints.V1.Customers;
 
 public class Create : EndpointBaseAsync.WithRequest<CreateCustomerCommand>.WithActionResult<CreateCustomerResult>
 {

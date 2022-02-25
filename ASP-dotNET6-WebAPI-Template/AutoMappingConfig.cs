@@ -1,4 +1,5 @@
 ﻿using ASP_dotNET6_WebAPI_Template.Endpoints.Customers;
+using ASP_dotNET6_WebAPI_Template.Endpoints.V1.Customers;
 using ASP_dotNET6_WebAPI_Template.Models;
 using AutoMapper;
 

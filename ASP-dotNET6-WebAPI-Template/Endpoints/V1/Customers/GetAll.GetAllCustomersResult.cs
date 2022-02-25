@@ -1,4 +1,4 @@
-﻿namespace ASP_dotNET6_WebAPI_Template.Endpoints.Customers;
+﻿namespace ASP_dotNET6_WebAPI_Template.Endpoints.V1.Customers;
 
 public class GetAllCustomersResult
 {
