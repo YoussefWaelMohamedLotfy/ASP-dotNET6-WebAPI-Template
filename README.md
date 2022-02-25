@@ -15,4 +15,4 @@ The ready template for the next Up-to-Date Web API Project.
   + SQL Server Connection
 + Asynchronous Repository and Unit of Work Patterns implemented
 + Polly for Retry Pattern
-
++ Bogus Fake Data Generator for DbContext Seeding
