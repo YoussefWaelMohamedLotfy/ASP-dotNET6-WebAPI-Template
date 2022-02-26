@@ -1,4 +1,5 @@
 ﻿using ASP_dotNET6_WebAPI_Template.Extensions;
+using AspNetCoreRateLimit;
 
 namespace ASP_dotNET6_WebAPI_Template;
 
@@ -27,6 +28,9 @@ public class Startup
     /// <param name="env">The Host Environment</param>
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
     {
+        app.UseIpRateLimiting();
+        //app.UseClientRateLimiting();
+
         if (env.IsDevelopment() || env.IsStaging())
         {
             app.UseSwagger();

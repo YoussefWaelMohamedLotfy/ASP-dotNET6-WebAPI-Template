@@ -13,6 +13,11 @@ public class HealthCheckInstaller : IServiceInstaller
                 name: "SQL Server Connection Check",
                 failureStatus: HealthStatus.Degraded,
                 tags: new[] { "ready" })
+            .AddRedis(
+                configuration.GetConnectionString("RedisConnection"),
+                name: "Redis Cache Connection Check",
+                failureStatus: HealthStatus.Degraded,
+                tags: new[] { "ready" })
             .AddDbContextCheck<ApplicationDbContext>(
                 "ApplicationDbContext EF Core Check",
                 failureStatus: HealthStatus.Degraded,

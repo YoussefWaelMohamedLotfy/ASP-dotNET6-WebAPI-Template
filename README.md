@@ -24,5 +24,9 @@ The ready template for the next Up-to-Date Web API Project.
 + Health Checks
   + Entity Framework Core DbContext Check
   + SQL Server Check
+  + Redis Cache Check
   + URL Group Check
 + Pagination
++ Distributed Rate Limiting
+  + IP Limiting Rules
+  + Client Limiting Rules
