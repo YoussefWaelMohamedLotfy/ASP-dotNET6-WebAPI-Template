@@ -19,7 +19,7 @@ public class RateLimitInstaller : IServiceInstaller
         //services.Configure<ClientRateLimitOptions>(configuration.GetSection("ClientRateLimiting"));
         //services.Configure<ClientRateLimitPolicies>(configuration.GetSection("ClientRateLimitPolicies"));
 
-        services.AddSingleton<IConnectionMultiplexer>(_ => ConnectionMultiplexer.Connect(configuration.GetConnectionString("RedisConnection")));
+        services.AddSingleton<IConnectionMultiplexer>(_ => ConnectionMultiplexer.Connect(configuration.GetConnectionString("RedisConnection"),c => c.AbortOnConnectFail = false));
         services.AddRedisRateLimiting();
 
         services.AddSingleton<IRateLimitConfiguration, RateLimitConfiguration>();

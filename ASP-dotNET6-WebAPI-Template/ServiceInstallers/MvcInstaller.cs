@@ -1,4 +1,5 @@
 ﻿using ASP_dotNET6_WebAPI_Template.Services;
+using FluentValidation.AspNetCore;
 using System.Text.Json.Serialization;
 
 namespace ASP_dotNET6_WebAPI_Template.ServiceInstallers;
@@ -11,6 +12,7 @@ public class MvcInstaller : IServiceInstaller
         {
             options.UseNamespaceRouteToken();
         })
+        .AddFluentValidation(config => config.RegisterValidatorsFromAssemblyContaining<Startup>())
         .AddJsonOptions(options =>
         {
             options.JsonSerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull;

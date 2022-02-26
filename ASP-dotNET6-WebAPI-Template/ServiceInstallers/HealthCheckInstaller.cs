@@ -27,7 +27,7 @@ public class HealthCheckInstaller : IServiceInstaller
                 name: "External URL Check",
                 failureStatus: HealthStatus.Degraded,
                 timeout: TimeSpan.FromSeconds(5),
-                tags: new[] { "ready" });
+                tags: new[] { "live" });
             
     }
 }

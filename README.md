@@ -30,3 +30,4 @@ The ready template for the next Up-to-Date Web API Project.
 + Distributed Rate Limiting
   + IP Limiting Rules
   + Client Limiting Rules
++ Fluent Validation Support
