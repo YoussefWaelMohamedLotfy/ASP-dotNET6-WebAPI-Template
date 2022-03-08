@@ -15,6 +15,7 @@ public class MvcInstaller : IServiceInstaller
             options.UseNamespaceRouteToken();
         })
         .AddFluentValidation(config => config.RegisterValidatorsFromAssemblyContaining<Startup>())
+        .AddXmlDataContractSerializerFormatters()
         .AddJsonOptions(options =>
         {
             options.JsonSerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull;

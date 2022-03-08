@@ -32,3 +32,4 @@ The ready template for the next Up-to-Date Web API Project.
   + Client Limiting Rules
 + Fluent Validation Support
 + SignalR Realtime Communication
++ Hangfire for Background Jobs Scheduling

@@ -1,6 +1,7 @@
 ﻿using ASP_dotNET6_WebAPI_Template.Extensions;
 using ASP_dotNET6_WebAPI_Template.Hubs;
 using AspNetCoreRateLimit;
+using Hangfire;
 
 namespace ASP_dotNET6_WebAPI_Template;
 
@@ -50,6 +51,7 @@ public class Startup
 
             endpoints.MapControllers();
             endpoints.MapCustomHealthChecks();
+            endpoints.MapHangfireDashboard();
         });
     }
 
