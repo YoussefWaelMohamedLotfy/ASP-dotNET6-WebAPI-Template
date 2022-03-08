@@ -31,3 +31,4 @@ The ready template for the next Up-to-Date Web API Project.
   + IP Limiting Rules
   + Client Limiting Rules
 + Fluent Validation Support
++ SignalR Realtime Communication

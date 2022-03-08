@@ -8,6 +8,8 @@ public class MvcInstaller : IServiceInstaller
 {
     public void InstallServices(IServiceCollection services, IConfiguration configuration)
     {
+        services.AddSignalR();
+
         services.AddControllers(options =>
         {
             options.UseNamespaceRouteToken();

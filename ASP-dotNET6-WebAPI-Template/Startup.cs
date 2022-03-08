@@ -1,4 +1,5 @@
 ﻿using ASP_dotNET6_WebAPI_Template.Extensions;
+using ASP_dotNET6_WebAPI_Template.Hubs;
 using AspNetCoreRateLimit;
 
 namespace ASP_dotNET6_WebAPI_Template;
@@ -45,8 +46,9 @@ public class Startup
 
         app.UseEndpoints(endpoints =>
         {
-            endpoints.MapControllers();
+            endpoints.MapHub<MessageHub>("/message");
 
+            endpoints.MapControllers();
             endpoints.MapCustomHealthChecks();
         });
     }
