@@ -1,5 +1,4 @@
-﻿using ASP_dotNET6_WebAPI_Template.RateLimiting;
-using AspNetCoreRateLimit;
+﻿using AspNetCoreRateLimit;
 using AspNetCoreRateLimit.Redis;
 using StackExchange.Redis;
 

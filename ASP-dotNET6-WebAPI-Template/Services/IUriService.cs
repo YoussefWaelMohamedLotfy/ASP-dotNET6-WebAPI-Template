@@ -6,5 +6,5 @@ public interface IUriService
 {
     Uri GetCustomerUri(int customerId);
 
-    Uri GetAllCustomersUri(PaginationQuery query = null);
+    Uri GetAllCustomersUri(PaginationQuery query = null!);
 }

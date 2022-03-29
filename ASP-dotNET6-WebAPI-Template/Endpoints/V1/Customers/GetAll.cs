@@ -30,6 +30,7 @@ public class GetAll : EndpointBaseAsync.WithRequest<PaginationQuery>.WithResult<
     ///     **Check it out**
     /// </remarks>
     /// <param name="query">The pagination query</param>
+    /// <param name="cancellationToken"></param>
     /// <returns>All customers in Database</returns>
     /// <response code="200">A success request</response>
     /// <response code="404">Not Found any Customers</response>

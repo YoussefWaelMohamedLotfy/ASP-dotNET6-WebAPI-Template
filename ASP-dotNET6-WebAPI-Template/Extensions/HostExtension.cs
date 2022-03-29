@@ -27,7 +27,7 @@ public static class HostExtension
                                 logger.LogError($"Retry {retryCount} of {context.PolicyKey} at {context.OperationKey}, due to: {exception}.");
                             });
 
-                retry.Execute(() => InvokeSeeder(seeder, context, services));
+                retry.Execute(() => InvokeSeeder(seeder!, context, services));
 
                 logger.LogInformation("Migrated database associated with context {DbContextName}", typeof(TContext).Name);
             }

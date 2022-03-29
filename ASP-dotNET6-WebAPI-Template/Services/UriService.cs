@@ -12,7 +12,7 @@ namespace ASP_dotNET6_WebAPI_Template.Services
             _baseUri = baseUri;
         }
 
-        public Uri GetAllCustomersUri(PaginationQuery query = null)
+        public Uri GetAllCustomersUri(PaginationQuery query = null!)
         {
             Uri uri = new(_baseUri);
 

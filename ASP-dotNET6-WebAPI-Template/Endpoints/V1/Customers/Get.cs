@@ -1,4 +1,5 @@
 ﻿using Ardalis.ApiEndpoints;
+using ASP_dotNET6_WebAPI_Template.Attributes;
 using ASP_dotNET6_WebAPI_Template.Models.IRepositories;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
@@ -25,6 +26,7 @@ public class Get : EndpointBaseAsync.WithRequest<int>.WithActionResult<GetCustom
     /// <response code="400">Not Found any with ID</response>
     /// <returns>The Customer Data</returns>
     [HttpGet("api/[namespace]/{id}", Name = "[namespace]_[controller]")]
+    [Cached(200)]
     public override async Task<ActionResult<GetCustomerResult>> HandleAsync(int id, CancellationToken cancellationToken)
     {
         // Get from DB and return data

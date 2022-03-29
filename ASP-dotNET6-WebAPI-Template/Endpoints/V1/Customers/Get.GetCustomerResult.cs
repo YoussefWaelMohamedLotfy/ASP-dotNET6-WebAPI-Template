@@ -4,9 +4,9 @@ public record GetCustomerResult
 {
     public int ID { get; init; }
 
-    public string Name { get; init; }
+    public string Name { get; init; } = default!;
 
-    public string Address { get; init; }
+    public string Address { get; init; } = default!;
 
     public DateTimeOffset DateOfBirth { get; init; }
 }

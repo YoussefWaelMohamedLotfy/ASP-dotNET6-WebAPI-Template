@@ -2,7 +2,7 @@
 
 public class PaginatedResponse<T>
 {
-    public IEnumerable<T> Data { get; set; }
+    public IEnumerable<T> Data { get; set; } = default!;
 
     public int? PageNumber { get; set; }
 

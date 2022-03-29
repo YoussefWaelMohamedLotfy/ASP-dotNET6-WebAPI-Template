@@ -11,6 +11,7 @@ The ready template for the next Up-to-Date Web API Project.
 + OpenAPI (Swagger) Documentation
   + Summarized Endpoints with Descriptions
   + Request and Response Examples
++ application/xml Responses supported
 + Entity Framework Core 6
   + SQL Server Connection
 + Asynchronous Repository and Unit of Work Patterns implemented

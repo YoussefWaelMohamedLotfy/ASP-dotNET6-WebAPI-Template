@@ -15,16 +15,17 @@
   <ItemGroup>
 	<PackageReference Include="Ardalis.ApiEndpoints" Version="4.0.1" />
 	<PackageReference Include="Ardalis.ApiEndpoints.Swashbuckle" Version="4.0.1" />
-	<PackageReference Include="AspNetCore.HealthChecks.Redis" Version="6.0.2" />
+	<PackageReference Include="AspNetCore.HealthChecks.Redis" Version="6.0.3" />
 	<PackageReference Include="AspNetCore.HealthChecks.SqlServer" Version="6.0.2" />
 	<PackageReference Include="AspNetCore.HealthChecks.UI.Client" Version="6.0.4" />
 	<PackageReference Include="AspNetCore.HealthChecks.Uris" Version="6.0.3" />
-	<PackageReference Include="AspNetCoreRateLimit.Redis" Version="1.0.0" />
+	<PackageReference Include="AspNetCoreRateLimit.Redis" Version="1.0.1" />
 	<PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
 	<PackageReference Include="Bogus" Version="34.0.1" />
-	<PackageReference Include="FluentValidation.AspNetCore" Version="10.3.6" />
+	<PackageReference Include="FluentValidation.AspNetCore" Version="10.4.0" />
 	<PackageReference Include="Hangfire.AspNetCore" Version="1.7.28" />
 	<PackageReference Include="Hangfire.SqlServer" Version="1.7.28" />
+	<PackageReference Include="Marvin.Cache.Headers" Version="6.0.0" />
 	<PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="5.0.0" />
 	<PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.3" />
 	<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.3" />
@@ -32,6 +33,7 @@
 	  <PrivateAssets>all</PrivateAssets>
 	  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 	</PackageReference>
+	<PackageReference Include="Microsoft.Extensions.Caching.StackExchangeRedis" Version="6.0.3" />
 	<PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore" Version="6.0.3" />
 	<PackageReference Include="Polly" Version="7.2.3" />
 	<PackageReference Include="Serilog.AspNetCore" Version="5.0.0" />

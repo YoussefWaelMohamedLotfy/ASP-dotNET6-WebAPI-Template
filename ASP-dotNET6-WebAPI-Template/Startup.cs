@@ -45,6 +45,8 @@ public class Startup
 
         app.UseAuthorization();
 
+        app.UseHttpCacheHeaders();
+
         app.UseEndpoints(endpoints =>
         {
             endpoints.MapHub<MessageHub>("/message");

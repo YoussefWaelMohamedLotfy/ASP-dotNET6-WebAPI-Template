@@ -2,7 +2,7 @@
 
 public record UpdatedCustomerResult : UpdateCustomerCommand
 {
-    public string Address { get; init; }
+    public string Address { get; init; } = default!;
 
     public DateTimeOffset DateOfBirth { get; init; }
 }
