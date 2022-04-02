@@ -28,6 +28,7 @@ The ready template for the next Up-to-Date Web API Project.
   + Redis Cache Check
   + URL Group Check
 + Pagination
++ Caching using Redis
 + Distributed Rate Limiting
   + IP Limiting Rules
   + Client Limiting Rules
