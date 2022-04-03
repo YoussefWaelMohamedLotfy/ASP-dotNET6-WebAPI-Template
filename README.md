@@ -14,6 +14,8 @@ The ready template for the next Up-to-Date Web API Project.
 + application/xml Responses supported
 + Entity Framework Core 6
   + SQL Server Connection
++ Docker Support
+  > The Container will throw a "LocalDB is not supported on this Platform" error. You should change the Connection String of SqlServerConnection in *appsettings.json* to a working instance.
 + Asynchronous Repository and Unit of Work Patterns implemented
 + API Keys Authentication (Dummy Implementation)
 + Polly for Retry Pattern
