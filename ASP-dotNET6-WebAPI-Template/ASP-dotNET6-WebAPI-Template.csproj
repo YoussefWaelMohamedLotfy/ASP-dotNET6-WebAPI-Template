@@ -21,11 +21,11 @@
 	<PackageReference Include="AspNetCore.HealthChecks.Uris" Version="6.0.3" />
 	<PackageReference Include="AspNetCoreRateLimit.Redis" Version="1.0.1" />
 	<PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
-	<PackageReference Include="Bogus" Version="34.0.1" />
+	<PackageReference Include="Bogus" Version="34.0.2" />
 	<PackageReference Include="FluentValidation.AspNetCore" Version="10.4.0" />
 	<PackageReference Include="Hangfire.AspNetCore" Version="1.7.28" />
 	<PackageReference Include="Hangfire.SqlServer" Version="1.7.28" />
-	<PackageReference Include="Marvin.Cache.Headers" Version="6.0.0" />
+	<PackageReference Include="Marvin.Cache.Headers" Version="6.1.0" />
 	<PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="5.0.0" />
 	<PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.3" />
 	<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.3" />

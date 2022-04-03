@@ -25,6 +25,7 @@ public class Get : EndpointBaseAsync.WithRequest<int>.WithActionResult<GetCustom
     /// <response code="200">Found a Customer</response>
     /// <response code="400">Not Found any with ID</response>
     /// <returns>The Customer Data</returns>
+    [ApiExplorerSettings(GroupName = "v1")]
     [HttpGet("api/[namespace]/{id}", Name = "[namespace]_[controller]")]
     [Cached(200)]
     public override async Task<ActionResult<GetCustomerResult>> HandleAsync(int id, CancellationToken cancellationToken)

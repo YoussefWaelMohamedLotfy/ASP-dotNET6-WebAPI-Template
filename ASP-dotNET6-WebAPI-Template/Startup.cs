@@ -36,7 +36,11 @@ public class Startup
         if (env.IsDevelopment() || env.IsStaging())
         {
             app.UseSwagger();
-            app.UseSwaggerUI();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v2/swagger.json", "V2 Docs");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "V1 Docs");
+            });
         }
 
         app.UseHttpsRedirection();

@@ -24,6 +24,7 @@ public class Update : EndpointBaseAsync.WithRequest<UpdateCustomerCommand>.WithA
     /// <returns></returns>
     /// <response code="200">Updated Successfully</response>
     /// <response code="404">Not Found</response>
+    [ApiExplorerSettings(GroupName = "v1")]
     [HttpPut("api/[namespace]")]
     public override async Task<ActionResult<UpdatedCustomerResult>> HandleAsync([FromBody] UpdateCustomerCommand request, CancellationToken cancellationToken)
     {

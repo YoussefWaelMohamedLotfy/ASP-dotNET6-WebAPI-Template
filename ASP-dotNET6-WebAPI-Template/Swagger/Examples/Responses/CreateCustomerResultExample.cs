@@ -1,7 +1,7 @@
 ﻿using ASP_dotNET6_WebAPI_Template.Endpoints.Customers;
 using Swashbuckle.AspNetCore.Filters;
 
-namespace ASP_dotNET6_WebAPI_Template.SwaggerExamples.Responses;
+namespace ASP_dotNET6_WebAPI_Template.Swagger.Examples.Responses;
 
 public class CreateCustomerResultExample : IExamplesProvider<CreateCustomerResult>
 {

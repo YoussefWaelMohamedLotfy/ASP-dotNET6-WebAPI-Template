@@ -15,6 +15,7 @@ The ready template for the next Up-to-Date Web API Project.
 + Entity Framework Core 6
   + SQL Server Connection
 + Asynchronous Repository and Unit of Work Patterns implemented
++ API Keys Authentication (Dummy Implementation)
 + Polly for Retry Pattern
 + Bogus Fake Data Generator for DbContext Seeding
 + Serilog

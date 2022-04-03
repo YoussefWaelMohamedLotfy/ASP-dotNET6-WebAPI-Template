@@ -20,10 +20,6 @@ public class RedisCacheInstaller : IServiceInstaller
         });
 
         services.AddHttpCacheHeaders(
-            expirationModelOptions =>
-            {
-                expirationModelOptions.MaxAge = 20;
-            },
             validationModelOptions =>
             {
                 validationModelOptions.MustRevalidate = true;

@@ -34,6 +34,7 @@ public class GetAll : EndpointBaseAsync.WithRequest<PaginationQuery>.WithResult<
     /// <returns>All customers in Database</returns>
     /// <response code="200">A success request</response>
     /// <response code="404">Not Found any Customers</response>
+    [ApiExplorerSettings(GroupName = "v1")]
     [HttpGet("api/[namespace]")]
     public override async Task<PaginatedResponse<GetAllCustomersResult>> HandleAsync([FromQuery] PaginationQuery query, CancellationToken cancellationToken)
     {
