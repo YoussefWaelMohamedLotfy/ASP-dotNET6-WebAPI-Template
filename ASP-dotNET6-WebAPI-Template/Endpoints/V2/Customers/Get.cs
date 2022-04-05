@@ -2,6 +2,7 @@
 using ASP_dotNET6_WebAPI_Template.Attributes;
 using Marvin.Cache.Headers;
 using Microsoft.AspNetCore.Mvc;
+using Swashbuckle.AspNetCore.Annotations;
 
 namespace ASP_dotNET6_WebAPI_Template.Endpoints.V2.Customers;
 
@@ -16,7 +17,7 @@ public class Get : EndpointBaseSync.WithoutRequest.WithActionResult
     /// <response code="401">Unauthorized Response</response>
     /// <returns>Array of random customers</returns>
     [ApiVersion("2.0")]
-    [ApiExplorerSettings(GroupName = "v2")]
+    [ApiExplorerSettings(GroupName = "v2.0")]
     [ApiKeyAuthorize]
     [HttpGet("api/[namespace]")]
     //[Cached(30)]

@@ -21,7 +21,7 @@ public class Delete : EndpointBaseAsync.WithRequest<int>.WithActionResult
     /// <returns></returns>
     /// <response code="204">No Content Success</response>
     /// <response code="404">Not Found ID</response>
-    [ApiExplorerSettings(GroupName = "v1")]
+    [ApiExplorerSettings(GroupName = "v1.0")]
     [HttpDelete("api/[namespace]/{id}")]
     public override async Task<ActionResult> HandleAsync(int id, CancellationToken cancellationToken)
     {

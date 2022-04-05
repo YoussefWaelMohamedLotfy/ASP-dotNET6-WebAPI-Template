@@ -33,12 +33,12 @@ public class SwaggerInstaller : IServiceInstaller
                 }
             });
 
-            swaggerOptions.SwaggerDoc("v1",
+            swaggerOptions.SwaggerDoc("v1.0",
                 new OpenApiInfo
                 {
-                    Title = "API v1",
+                    Title = "API v1.0",
                     Description = "Demo for ASP.NET 6 Web API",
-                    Version = "v1",
+                    Version = "v1.0",
                     Contact = new OpenApiContact
                     {
                         Name = "Youssef Wael",
@@ -51,12 +51,12 @@ public class SwaggerInstaller : IServiceInstaller
                     }
                 });
 
-            swaggerOptions.SwaggerDoc("v2",
+            swaggerOptions.SwaggerDoc("v2.0",
                     new OpenApiInfo
                     {
-                        Title = "API v2",
-                        Description = "Demo for ASP.NET 6 Web API",
-                        Version = "v2",
+                        Title = "API v2.0",
+                        Description = "Demo for ASP.NET 6 Web API. Use `MyAppSuperSecretKey` for Authorization",
+                        Version = "v2.0",
                         Contact = new OpenApiContact
                         {
                             Name = "Youssef Wael",

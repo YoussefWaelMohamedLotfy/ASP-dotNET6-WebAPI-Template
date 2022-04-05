@@ -43,7 +43,7 @@ namespace ASP_dotNET6_WebAPI_Template.DataAccess.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("Customers");
+                    b.ToTable("Customers", (string)null);
                 });
 #pragma warning restore 612, 618
         }

@@ -38,8 +38,10 @@ public class Startup
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v2/swagger.json", "V2 Docs");
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "V1 Docs");
+                c.DocumentTitle = "Demo Swagger UI";
+
+                c.SwaggerEndpoint("/swagger/v2.0/swagger.json", "v2.0 Docs");
+                c.SwaggerEndpoint("/swagger/v1.0/swagger.json", "v1.0 Docs");
             });
         }
 

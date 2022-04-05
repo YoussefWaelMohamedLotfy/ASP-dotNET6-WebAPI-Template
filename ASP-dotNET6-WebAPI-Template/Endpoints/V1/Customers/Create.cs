@@ -26,7 +26,7 @@ public class Create : EndpointBaseAsync.WithRequest<CreateCustomerCommand>.WithA
     /// <returns>The newly created Customer</returns>
     /// <response code="201">Created Success</response>
     /// <response code="400">Bad Request</response>
-    [ApiExplorerSettings(GroupName = "v1")]
+    [ApiExplorerSettings(GroupName = "v1.0")]
     [HttpPost("api/[namespace]")]
     [ProducesResponseType(typeof(CreateCustomerResult), 201)]
     public override async Task<ActionResult<CreateCustomerResult>> HandleAsync([FromBody] CreateCustomerCommand request, CancellationToken cancellationToken)
