@@ -38,3 +38,4 @@ The ready template for the next Up-to-Date Web API Project.
 + Fluent Validation Support
 + SignalR Realtime Communication
 + Hangfire for Background Jobs Scheduling
++ Automatic publishing to the internet using [ngrok](https://ngrok.com/) 
